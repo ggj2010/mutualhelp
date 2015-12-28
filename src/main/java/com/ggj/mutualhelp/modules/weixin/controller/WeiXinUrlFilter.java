@@ -104,9 +104,11 @@ public class WeiXinUrlFilter {
 	 * @return:void
 	 */
 	private String getCallBackContent(InputMessage inputMessage, ServletResponse resp) {
+		//转换接受和发送对象
+		WeiXinUtil.changeInputMessage(inputMessage);
 		// 1、判断类型
 		String msgType = inputMessage.getMsgType();
-		BaseService service = SpringContextHolder.getBean(inputMessage.getMsgType());
+		BaseService service = SpringContextHolder.getBean(msgType);
 		return service.deal(inputMessage);
 	}
 	

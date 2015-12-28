@@ -22,4 +22,8 @@ public class WeiXinSubscribeUser extends BaseEntity {
 	private Date unsubscribeDate;
 	// 关注日期
 	private Date subscribeDate;
+
+	public WeiXinSubscribeUser(String name){
+		this.name=name;
+	}
 }

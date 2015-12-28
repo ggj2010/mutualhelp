@@ -1,0 +1,13 @@
+access_token是公众号的全局唯一票据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。
+https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+
+正常情况下，微信会返回下述JSON数据包给公众号：
+
+{"access_token":"ACCESS_TOKEN","expires_in":7200}
+
+//微信公众号测试号申请地址
+http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index
+
+//获取用户信息
+
+https://api.weixin.qq.com/cgi-bin/user/info?access_token=4Ss3UqssGxlc2l7iXoGkwwarT3JHKvOTkr_Zhk5cjcg0PGXd5_JsUYIVk1se_ckOX8XN-iG0bReOmNaorZnCat6P7w8batcFbxpZ5mEvI7YDAThADAROH&openid=oX22_w1wkaU7YRF54U3COPkSnNqc&lang=zh_CN

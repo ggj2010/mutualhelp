@@ -26,7 +26,7 @@ public class WeiXinUtil {
 	 * 转换接受和发送对象
 	 * @param inputMessage
 	 */
-	public static void changeInputMessage(InputMessage inputMessage) throws Exception {
+	public static void changeInputMessage(InputMessage inputMessage) {
 		String fromUserName = inputMessage.getFromUserName();
 		String toUserName = inputMessage.getToUserName();
 		inputMessage.setFromUserName(toUserName);
