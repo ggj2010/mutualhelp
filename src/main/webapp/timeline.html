@@ -1,0 +1,257 @@
+<!-- html5的文档声明 -->
+<!DOCTYPE HTML>
+<html zh-CN>
+<!--  lang对搜索引擎和浏览器是有帮助的<html lang="zh-CN"> -->
+<head>
+<!-- 必须申明文档的编码charset，且与文件本身编码保持一致，推荐使用UTF-8编码 -->
+<meta charset="utf-8">
+<title>私人定制</title>
+<meta name="keywords" content="私人定制,定制服务,时间轴">
+<meta name="description" content="私人定制开发时间轴">
+
+<!-- Bootstrap 是移动设备优先的 ,确保适当的绘制和触屏缩放。user-scalable=no是禁止屏幕缩放的 -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no">
+
+<!-- 国产浏览器告诉模式 -->
+<meta name="renderer" content="webkit">
+
+<meta http-equiv="Cache-Control" content="no-store">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<!--Bookmark是用来显示收藏夹本网页的图标的  -->
+<link rel="Bookmark" href="static/image/favicon.ico">
+<!--Bookmark是用来显示浏览器导航栏本网页的图标的  -->
+<link rel="Shortcut Icon" href="static/image/favicon.ico">
+
+<!-- 把CSS放在头部，可以让页面根据CSS样式逐步渲染-->
+<link type="text/css"
+	href="static/css/bootstrap-3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<link rel="stylesheet" type="text/css"
+	href="static/css/plugins/timeline/timeline.css" />
+<style>
+</style>
+
+</head>
+<body>
+	<!-- 
+	<div class="container-fluent">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-title"
+					aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand " href="">私人定制</a>
+			</div>
+
+			<div id="navbar-title" class="collapse navbar-collapse">
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="寻找你需要的服务">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="web/account/login" class="btn"> <span
+							><strong>登陆</strong></span></a>
+					</li>
+					<li>
+						<a href="account/register" class="btn"> <span
+							><strong>注册</strong></span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	 -->
+	<div class="container">
+		<header class="clearfix">
+			<h1>Never put off what you can do today until tomorrow.</h1>
+			<h2>私人定制开发时间轴 <span>Learn and live</span></h2>
+		</header>
+		<section class="main">
+			<ul class="timeline">
+				<li class="event">
+					<input type="radio" name="tl-group"  />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-08-18</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>前言</h3>
+								<p>
+									零碎的接触到很多知识，长时间不用就忘了，这里算是记录把，可能自己的认识比较短板，但是觉悟都是随着年限而提高的，慢慢来吧，
+									就像当初我创建git
+									TeamStudy这个项目的初衷，我想大家和我一起每天提交一点代码上去，代码质量无所谓，只要觉得对自己有帮助就好，
+									如果大家都坚持住了都能一起学习，可是初衷是好的，最后只有我一个人断断续续的提交。</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="event">
+					<input type="radio" name="tl-group"  />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-08-19</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>技术</h3>
+								<p>技术选型：
+									 缓存：redis session:shiro来管理权限，session 前端：
+									ui一直是我的短板，每次想做什么东西的时候，最新考虑的就是ui的问题，既然我自己不会设计ui，那就模仿别人的设计吧
+									//https://www.freelancer.cn/freelancers/ 前台展示页面： 后台： 直接用hplus吧
+									安全考虑： 密码：暴力破解登录（限制登陆次数），防止僵尸用户（限制同ip一分钟内只能注册1条） 存储：
+									图片初期放在项目的依赖里面，以后可以改成放到阿里云里面或者其他cdns加速 日志：
+									一般企业系统或者小型系统日志分成两块，操作日志一般都是放到数据库，代码级别监控日志一般都放到文件里面，
+									比如常用的log4j,loogback。 至于那些实时的日志收集系统了解就行，碰到再看。 报表：
+									http://echarts.baidu.com/doc/doc.html EChartsFork me on GitHub
+									持久化技术： 目前准备做两个版本 hibernate的和mybatis的就当学习用咯 js技术:</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-08-26</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>唠叨</h3>
+								<p>上周到现在一直在忙公司的事情，现在算是没有事情，继续搞起，写代码代码！
+									我想每一行代码都加上注释，这样如果有人看到我写的代码 至少能够看懂。</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-08-27</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>进度啊~</h3>
+								<p>昨天搭建好环境了，等架子差不多再一次性提交到git把。 先做网站注册模块把</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-08-29</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>还是没有下笔~</h3>
+								<p>注册的时候验证码就不带吧，限制注册次数。登陆的时候发送邮箱验证路径.</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-09-08</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>继续唠叨~</h3>
+								<p>完成注册页面的校验，和邮箱token的验证,公司的代码重构很是头疼，真心不想弄了哎	</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-09-10</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>开始画页面咯，div+css~</h3>
+								<p>	开始写登陆模块了，用shiro去管理，就是画页面有点头疼。昨天晚上被一个css 背景透明化搞郁闷了半天，
+	css的选择器的优先级是1、style 2、id 3、class 4、html
+	样式的优先级 外部样式External style sheet <（内部样式）Internal style sheet <（内联样式）Inline style。
+	css的样式最终确定是先通过 css选择器优先级别和内外部样式决定的。同一个div里面 不同选择器（id,class, a ），都有同样的css属性比如color:red
+	 那么最终显示的是 id里面的color, 而id的color 又分为 内联样式  内部样式， 、外部样式，的区分	</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-09-17</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>主界面,主界面！干物妹,小埋!</h3>
+								<p>	公司的事情陆陆续续的拖着，代码没事我就写点，可能记录没有那么详细。登陆已经完成了，主界面功能也在陆续添加，
+								css是很头疼的，都是样式绊着脚。requirejs想正确使用路还很长啊，反正我能怎么去理解就怎么去使用吧！</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+				<li class="event">
+					<input type="radio" name="tl-group" />
+					<label></label>
+					<div class="thumb logo">
+						<span>2015-09-23</span>
+					</div>
+					<div class="content-perspective">
+						<div class="content">
+							<div class="content-inner">
+								<h3>思考，细化业务</h3>
+								<p>	一直在忙公司的事情。私人定制后台框架已经搭建差不多了，现在改到了具体业务部分勒。我得再细化喜欢才可以	</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+			</ul>
+		</section>
+	</div>
+</body>
+<!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
+<script type="text/javascript" src="static/js/lib/jquery-2.1.4.min.js">
+	
+</script>
+<script type="text/javascript"
+	src="static/js/lib/bootstrap-3.3.5.min.js">
+	
+</script>
+
+</html>

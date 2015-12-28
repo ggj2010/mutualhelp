@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ggj.mutualhelp.modules.weixin.dao.WeiXinSubscribeUserDao">
+	<cache />
+	<sql id="sqlColums">
+		id,name,unsubscribeDate as 'unsubscribe_date' ,subscribeDate as'subscribe_date'
+	</sql>
+	
+	<select id="checkIsSubscribe" resultType="java.lang.Integer">
+		select count(1) from tb_weixin_user where name=#{name}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tb_weixin_user(
+		id,name,unsubscribe_date, subscribe_date
+		) VALUES (
+		#{id},#{name},#{unsubscribeDate},#{subscribeDate}
+		)
+	</insert>
+
+	<update id="update">
+		update tb_weixin_user set unsubscribe_date=#{unsubscribeDate} where name=#{name}
+	</update>
+
+</mapper>

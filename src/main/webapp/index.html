@@ -1,0 +1,76 @@
+<!-- html5的文档声明 -->
+<!DOCTYPE HTML>
+<html zh-CN>
+    <!--  lang对搜索引擎和浏览器是有帮助的<html lang="zh-CN"> -->
+    <head>
+        <!-- 必须申明文档的编码charset，且与文件本身编码保持一致，推荐使用UTF-8编码 -->
+        <meta charset="utf-8">
+        <title>私人定制</title>
+        <meta name="keywords" content="私人定制,定制服务">
+        <meta name="description" content="描述">
+
+        <!-- Bootstrap 是移动设备优先的 ,确保适当的绘制和触屏缩放。user-scalable=no是禁止屏幕缩放的 -->
+        <meta name="viewport"
+        content="width=device-width,initial-scale=1,user-scalable=no">
+        <!--表示强制使用IE最新内核-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+        <!-- 国产浏览器告诉模式 -->
+        <meta name="renderer" content="webkit">
+
+        <meta http-equiv="Cache-Control" content="no-store">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+
+        <!--Bookmark是用来显示收藏夹本网页的图标的  -->
+        <link rel="Bookmark" href="static/image/favicon.ico">
+        <!--Bookmark是用来显示浏览器导航栏本网页的图标的  -->
+        <link rel="Shortcut Icon" href="static/image/favicon.ico">
+
+        <!-- 把CSS放在头部，可以让页面根据CSS样式逐步渲染-->
+        <link type="text/css" href="static/css/bootstrap-3.3.5/css/bootstrap.min.css"
+        rel="stylesheet">
+        
+
+    </head>
+    <body>
+        <!--navbar 和颜色   navbar-fixed-top在顶部-->
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar-title"
+                aria-expanded="false">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand " href="">私人定制</a>
+            </div>
+
+            <!-- title名称不能修改 -->
+            <div id="navbar-title" class="collapse navbar-collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="寻找你需要的服务">
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        搜索
+                    </button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="web/account/login" class="btn"> <span
+                        ><strong>登陆</strong></span></a>
+                    </li>
+                    <li>
+                        <a href="account/register" class="btn"> <span
+                        ><strong>注册</strong></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <!-- 浏览器下载js脚本文件时候，不会启动其他下载任务，放在底部有助于页面加载速度 -->
+    <script type="text/javascript" src="static/js/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript"
+    src="static/js/lib/bootstrap-3.3.5.min.js"></script>
+</html>
