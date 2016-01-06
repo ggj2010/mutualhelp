@@ -9,6 +9,7 @@
 		<result property="salt" column="salt" />
 		<result property="age" column="age" />
 		<result property="sex" column="sex" />
+		<result property="image" column="image" />
 		<result property="registerDate" column="register_date" />
 		<result property="isBlacklist" column="is_blacklist" />
 		<result property="isActive" column="is_active" />
@@ -25,6 +26,10 @@
 
 	<update id="activeEamil">
 		update tb_userinfo set is_active=#{isActive} where id=#{id};
+	</update>
+
+	<update id="updateImge">
+		update tb_userinfo set image=#{image} where id=#{id};
 	</update>
 	
 	<select id="get" resultMap="userInfoResult">

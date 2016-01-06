@@ -36,6 +36,12 @@
 
 <!-- switchery 切换开关 http://abpetkov.github.io/switchery -->	
 <link href="${path}/static/css/plugins/switchery/switchery.css" rel="stylesheet">
+<!-- sweetalert 弹出框-->
+<link href="${path}/static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+<!--webuploader 上传文件前端框架http://fex.baidu.com/webuploader/-->
+<link href="${path}/static/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+
 
 <!-- layer弹出框css -->
 <link type="text/css"

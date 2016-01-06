@@ -3,21 +3,32 @@ package com.ggj.mutualhelp.modules.account.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import com.alibaba.fastjson.JSON;
+import com.ggj.mutualhelp.common.persistence.ResultInfo;
+import com.ggj.mutualhelp.common.utils.AliyunUtil;
+import com.ggj.mutualhelp.common.utils.IdGen;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ggj.mutualhelp.common.security.useraccount.UserSecurity;
 import com.ggj.mutualhelp.modules.account.entity.UserInfo;
 import com.ggj.mutualhelp.modules.account.service.UserInfoService;
 import com.ggj.mutualhelp.modules.account.utils.UserUtils;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 /**
  * @ClassName:UserInfoController.java
@@ -28,6 +39,9 @@ import com.ggj.mutualhelp.modules.account.utils.UserUtils;
 @Slf4j
 @Controller
 public class UserInfoController {
+
+	@Autowired
+	AliyunUtil aliyunUtil;
 	
 	@Autowired
 	private UserSecurity userSecurity;
@@ -85,7 +99,6 @@ public class UserInfoController {
 	
 	/**
 	 * @Description: 发送验证邮件 
-	 * @param email
 	 * @return:String
 	 */
 	@ResponseBody
@@ -125,13 +138,46 @@ public class UserInfoController {
 	/**
 	 * @Description:  用户信息
 	 * @param model
-	 * @param userInfo
 	 * @return:String
 	 */
-	@RequestMapping(value = "account/info")
-	public String accountInfo(Model model, UserInfo userInfo) {
-		model.addAttribute("userInfo", userUtils.getCachedUserInfo(userInfo.getEmail()));
+	@RequestMapping(value = "web/account/info")
+	@RequiresPermissions("user")
+	public String accountInfo(Model model) {
+		model.addAttribute("userInfo", userUtils.getCurrentUserInfo());
 		return "account/info";
+	}
+
+	@RequestMapping(value = "web/account/info/uploadimg",method = {RequestMethod.POST})
+	@RequiresPermissions("user")
+	@ResponseBody
+	public String uploadImg(Model model, @RequestParam MultipartFile[] file) {
+		ResultInfo resultInfo=new ResultInfo(true);
+		try{
+		for (MultipartFile multipartFile : file) {
+			if (!multipartFile.isEmpty()) {
+				String key ="background_img/"+ IdGen.uuid()+ multipartFile.getOriginalFilename();
+				aliyunUtil.putObject(null, key, multipartFile.getInputStream());
+				resultInfo.setMessage("保存图像成功");
+				userInfoService.updateImage( userUtils.getCurrentUserInfo(),aliyunUtil.getEndpoint()+"/"+aliyunUtil.getBucket()+"/"+key);
+			}
+		}
+		} catch (Exception e) {
+			resultInfo.setSuccess(false);
+			resultInfo.setMessage(e.getLocalizedMessage());
+			log.error("保存用户头像失败！"+e.getLocalizedMessage());
+		}
+		return JSON.toJSONString(resultInfo);
+	}
+
+
+
+	private void userSpringMvc( MultipartFile[] myfiles) {
+		for (MultipartFile multipartFile : myfiles) {
+			if (!multipartFile.isEmpty()) {
+				String fileName = multipartFile.getOriginalFilename();
+				System.out.println(fileName + multipartFile.getSize() + "=" + multipartFile.getContentType() + "=" );
+			}
+		}
 	}
 	
 }

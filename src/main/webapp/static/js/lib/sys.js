@@ -10,6 +10,10 @@ $(function() {
     /**
      *表单验证 
      */
+
+    if($.validator!= undefined){
+
+
     $.validator.setDefaults({
         highlight : function(element) {
             $(element).closest('.form-group').removeClass('has-success').addClass('has-error').addClass('has-feedback');
@@ -24,5 +28,5 @@ $(function() {
         errorClass : "control-label",
         validClass : "m-b-none"
     });
-
+    }
 })

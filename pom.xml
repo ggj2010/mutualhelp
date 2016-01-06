@@ -316,6 +316,13 @@
 			</dependency> -->
 		<!--redis nosqlclient end -->
 
+		<!--开源sdk beging-->
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<!--开源sdk end-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -344,9 +351,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
 			</plugin>
 			<!-- 项目编译插件 -->
 			<plugin>
@@ -369,7 +373,6 @@
 					<port>${webserver.port}</port>
 					<!-- <path>/${project.artifactId}</path> -->
 					<uriEncoding>${project.build.sourceEncoding}</uriEncoding>
-					<server>${server.version}</server>
 				</configuration>
 			</plugin>
 		</plugins>

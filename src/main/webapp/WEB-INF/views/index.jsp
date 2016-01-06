@@ -77,9 +77,9 @@
 							</span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a class="J_menuItem" href="form_avatar.html">修改头像</a>
+                                <li><a class="J_menuItem" href="${path}/web/account/info">修改头像</a>
                                 </li>
-                                <li><a class="J_menuItem" href="profile.html">个人资料</a>
+                                <li><a class="J_menuItem" href="${path}/web/account/info">个人资料</a>
                                 </li>
                                 <li><a class="J_menuItem" href="contacts.html">联系我们</a>
                                 </li>
@@ -721,7 +721,7 @@
                             <div class="sidebar-message">
                                 <a href="http://www.zi-han.net/theme/hplus/#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="http://www.zi-han.net/theme/hplus/img/a8.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="#">
                                     </div>
                                     <div class="media-body">
 

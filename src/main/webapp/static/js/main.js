@@ -41,6 +41,9 @@ require.config({
        treetable:'plugins/treetable/jquery.treetable',
        //ztree
        jquerytree:'plugins/jquerytress/jquery.ztree.all-3.5',
+        //文件上传处理
+        webuploader:'plugins/webuploader/webuploader.min',
+
         /*自自定义*/
         base:'base',
         /*系统依赖*/

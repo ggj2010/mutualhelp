@@ -59,6 +59,21 @@ public class UserUtils {
 			}
 		});
 	}
+
+	/**
+	 * 删除缓存
+	 * @param email
+     */
+	public  void removeCachedUserInfo(final String email){
+		 redisDaoTemplate.execute(new RedisCallback<String>() {
+			public String doInRedis(Jedis jedis) {
+				String key = userInfoKey + email;
+				jedis.del(key);
+				return null;
+			}
+		});
+
+	}
 	
 	/**
 	 * 获取当前登录者对象

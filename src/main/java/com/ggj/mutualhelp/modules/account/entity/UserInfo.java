@@ -42,6 +42,10 @@ public class UserInfo extends BaseEntity {
 	
 	// 是否保存密码到cookie
 	private boolean rememberMe;
+
+	//头像照片地址
+	private String image;
+
 	
 	public UserInfo(String email) {
 		this.email = email;

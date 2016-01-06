@@ -13,5 +13,12 @@ public interface UserInfoDao extends CrudDao<UserInfo> {
 	 * @return:void
 	 */
 	public void activeEamil(@Param("id") String id, @Param("isActive") char isActive);
-	
+
+	/**
+	 * 更新图像
+	 * @param id
+	 * @param updateImge
+     */
+	public void updateImge(@Param("id") String id, @Param("image") String image);
+
 }
